@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\groit\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {}
+    "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\groit\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {
+    "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\groit\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
+        "projectUniqueName": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
         "projectName": "OnlineAuction.API",
-        "projectPath": "C:\\Users\\groit\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
-        "packagesPath": "C:\\Users\\groit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\groit\\Desktop\\OnlineAuction\\OnlineAuction.API\\obj\\",
+        "projectPath": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
+        "packagesPath": "C:\\Users\\igor.groita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\groit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor.groita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -91,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

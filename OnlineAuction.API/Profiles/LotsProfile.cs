@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineAuction.API.Dtos
+namespace OnlineAuction.API.Profiles
 {
-    public class ValueReadDto
+    public class LotsProfile
     {
     }
 }

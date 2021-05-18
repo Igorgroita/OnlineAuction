@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineAuction.Domain.Auth;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,20 +7,25 @@ namespace OnlineAuction.Domain.Models
 {
     public class Lot : BaseEntity
     {
-        [Required]
-        [MaxLength(100)]
-        public string Name { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
+        public User AuctioneerId { get; set; }
+        public User BuyerId { get; set; }
+        public string LotName { get; set; }
         public string Description { get; set; }
-
-        public bool Active { get; set; } = false;
-
-        [Required]
+        public bool Active 
+        {
+            get
+            {
+                return Active;
+            }
+            set 
+            {
+                DateTime now = DateTime.Now;
+                Active = StartNegotiationTime < now && now < SellTime; 
+            }
+        }
         public decimal CurrentPrice { get; set; }
-
-
-
+        public string PhotoFilePath { get; set; }
+        public DateTime StartNegotiationTime { get; set; }
+        public DateTime SellTime { get; set; }
     }
 }
