@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\groit\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\groit\\.nuget\\packages"
+    ]
+  }
+}
