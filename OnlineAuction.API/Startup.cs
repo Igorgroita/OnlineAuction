@@ -10,6 +10,7 @@ using OnlineAuction.API.Infrastructure.Middlewares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace OnlineAuction.API
@@ -26,8 +27,12 @@ namespace OnlineAuction.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-
+            services.AddDbContext<OnlineAuctionDbContext>(optionBuilder =>
+            {
+                optionBuilder.UseSqlServer(Configuration.GetConnectionString("AuctionDBConnection"));
+            });
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMvc();
             services.AddControllersWithViews();
             services.AddMediatR(typeof(Startup));
         }

@@ -2,7 +2,7 @@
 
 namespace OnlineAuction.Domain.Auth
 {
-    public class UserRole : IdentityUserRole<int>
+    public class UserRole : IdentityUserRole<long>
     {
     }
 }

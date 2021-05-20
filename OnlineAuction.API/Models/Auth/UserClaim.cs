@@ -2,7 +2,7 @@
 
 namespace OnlineBookShop.Domain.Auth
 {
-    public class UserClaim : IdentityUserClaim<int>
+    public class UserClaim : IdentityUserClaim<long>
     {
 
     }

@@ -24,6 +24,7 @@ namespace OnlineAuction.API.ModelsConfig
                     .IsRequired();
             builder.Property(x => x.StartNegotiationTime)
                     .IsRequired();
+            
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineAuction.API.Repositories.Interfaces;
+namespace OnlineAuction.API.Repositories.Interfaces
 {
     public interface ILotsRepository 
     {

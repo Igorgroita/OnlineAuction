@@ -2,7 +2,7 @@
 
 namespace OnlineAuction.Domain.Auth
 {
-    public class UserToken : IdentityUserToken<int>
+    public class UserToken : IdentityUserToken<long>
     {
     }
 }
