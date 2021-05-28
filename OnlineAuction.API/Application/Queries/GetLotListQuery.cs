@@ -30,11 +30,6 @@ namespace OnlineAuction.API.Application.Queries
             }
         }
 
-
-
-
     }
-
-
 
 }

@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace OnlineAuction.API.Application.Commands
 {
     public class AddLotCommand : IRequest<long>
-    {
-        
+    {   
         public Task<long> 
     }
 }
