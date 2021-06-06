@@ -22,9 +22,8 @@ namespace OnlineAuction.API.ModelsConfig
 
             builder.Property(x => x.AuctioneerId)
                     .IsRequired();
-            builder.Property(x => x.StartNegotiationTime)
-                    .IsRequired();
-            
+
+     //       builder.HasKey(x => x.Id);
         }
     }
 }

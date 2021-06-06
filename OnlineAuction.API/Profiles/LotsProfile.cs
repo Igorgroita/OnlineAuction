@@ -12,9 +12,11 @@ namespace OnlineAuction.API.Profiles
     {
         public LotsProfile()
         {
-            CreateMap<Lot, LotReadDto>();       
+            CreateMap<Lot, LotReadDto>();
 
+            CreateMap<Lot, LotCreateDto>();
 
+            CreateMap<LotCreateDto, Lot>();
 
         }
     }
