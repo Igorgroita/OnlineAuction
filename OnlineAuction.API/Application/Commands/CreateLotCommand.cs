@@ -10,34 +10,33 @@ using System.Threading.Tasks;
 
 namespace OnlineAuction.API.Application.Commands
 {
-    public class CreateLotCommand: IRequest<LotReadDto>
+    public class CreateLotCommand : IRequest<LotReadDto>
     {
-        public LotCreateDto Lot { get; set; }
+        public LotReadDto Lot { get; set; }
 
-        public CreateLotCommand(LotCreateDto lot)
+        public CreateLotCommand(LotReadDto lot)
         {
             Lot = lot;
         }
-
-        internal class CreateLotCommandHandler : IRequestHandler<CreateLotCommand, LotCreateDto>
+        internal class CreateLotCommandHandler : IRequestHandler<CreateLotCommand, LotReadDto>
         {
-            public readonly OnlineAuctionDbContext _ctx;
-            public readonly IMapper _mapper;
+            private readonly OnlineAuctionDbContext _ctx;
+            private readonly IMapper _mapper;
 
             public CreateLotCommandHandler(OnlineAuctionDbContext ctx, IMapper mapper)
             {
                 _ctx = ctx;
                 _mapper = mapper;
             }
-            public async Task<LotCreateDto> Handle(CreateLotCommand request, CancellationToken cancellationToken)
+            
+            public Task<LotReadDto> Handle(CreateLotCommand request, CancellationToken cancellationToken)
             {
                 var lot = _mapper.Map<Lot>(request.Lot);
                 _ctx.Lots.Add(lot);
-
-                return lot;
+                _ctx.SaveChanges();
+                LotReadDto lotDto = _mapper.Map<LotReadDto>(lot);
+                return Task.FromResult(lotDto);
             }
-
-
         }
 
     }

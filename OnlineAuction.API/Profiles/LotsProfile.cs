@@ -14,9 +14,8 @@ namespace OnlineAuction.API.Profiles
         {
             CreateMap<Lot, LotReadDto>();
 
-            CreateMap<Lot, LotCreateDto>();
+            CreateMap<LotReadDto, Lot>();
 
-            CreateMap<LotCreateDto, Lot>();
 
         }
     }

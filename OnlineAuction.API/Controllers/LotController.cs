@@ -17,10 +17,10 @@ namespace OnlineAuction.API.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class LotController: Controller
+    public class LotController : Controller
     {
         private readonly IMediator _mediator;
- 
+
         public LotController(IMediator mediator)
         {
             _mediator = mediator;
@@ -53,7 +53,7 @@ namespace OnlineAuction.API.Controllers
 
         //    _repository.CreateLot(lotModel);
         //    _repository.SaveChanges();
-                    
+
         //}
         [HttpGet]
         public async Task<IList<LotReadDto>> GetAllLots(CancellationToken cancelationToken)
@@ -67,9 +67,21 @@ namespace OnlineAuction.API.Controllers
         }
 
         [HttpPost]
-        public async Task<LotReadDto> CreateLot(LotCreateDto lot, CancellationToken cancellationToken)
+        public async Task<LotReadDto> CreateLot(LotReadDto lot, CancellationToken cancellationToken)
         {
             return await _mediator.Send(new CreateLotCommand(lot), cancellationToken);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<LotReadDto> DeleteLot(int id, CancellationToken cancellationToken)
+        {
+            return await _mediator.Send(new DeleteLotCommand(id), cancellationToken);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<Lot> UpdateLot(Lot lot, CancellationToken cancellationToken)
+        {
+            return await _mediator.Send(new UpdateLotCommand(lot), cancellationToken);
         }
 
     }

@@ -8,15 +8,9 @@ namespace OnlineAuction.API.Dtos
 {
     public class LotCreateDto
     {
-        [Required]
-        [MaxLength(200)]
+        public long Id { get; set; }
         public string LotName { get; set; }
-
-        [Required]
         public int AuctioneerId { get; set; }
-
-        [Required]
-        [MaxLength(1000)]
         public string Description { get; set; }
         
     }
