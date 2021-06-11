@@ -31,7 +31,6 @@ namespace OnlineAuction.Domain.Models
 //        public string PhotoFilePath { get; set; }
 //        public DateTime StartNegotiationTime { get; set; }
 //        public DateTime SellTime { get; set; }
-
-//        public List<Bet> Bets { get; set; }
+        public List<Bet> Bets { get; set; }
     }
 }

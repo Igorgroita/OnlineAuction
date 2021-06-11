@@ -14,7 +14,7 @@ namespace OnlineAuction.API.Application.Commands
     {
         public long Id { get; set; }
 
-        public DeleteLotCommand(int id)
+        public DeleteLotCommand(long id)
         {
             Id = id;
         }

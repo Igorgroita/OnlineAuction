@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OnlineAuction.API.Migrations
 {
-    public partial class TestMigration : Migration
+    public partial class BetsLots : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,7 +55,7 @@ namespace OnlineAuction.API.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AuctioneerId = table.Column<int>(type: "int", nullable: false),
+                    AuctioneerId = table.Column<long>(type: "bigint", nullable: false),
                     LotName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false)
                 },
@@ -176,20 +176,19 @@ namespace OnlineAuction.API.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LotId1 = table.Column<long>(type: "bigint", nullable: true),
-                    LotId = table.Column<int>(type: "int", nullable: false),
-                    BetterId = table.Column<int>(type: "int", nullable: false),
+                    LotId = table.Column<long>(type: "bigint", nullable: false),
+                    BetterId = table.Column<long>(type: "bigint", nullable: false),
                     BetSize = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bets_Lots_LotId1",
-                        column: x => x.LotId1,
+                        name: "FK_Bets_Lots_LotId",
+                        column: x => x.LotId,
                         principalTable: "Lots",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -232,9 +231,9 @@ namespace OnlineAuction.API.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bets_LotId1",
+                name: "IX_Bets_LotId",
                 table: "Bets",
-                column: "LotId1");
+                column: "LotId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

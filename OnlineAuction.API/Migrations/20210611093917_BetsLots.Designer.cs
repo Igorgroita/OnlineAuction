@@ -10,8 +10,8 @@ using OnlineAuction.API;
 namespace OnlineAuction.API.Migrations
 {
     [DbContext(typeof(OnlineAuctionDbContext))]
-    [Migration("20210606091527_TestMigration")]
-    partial class TestMigration
+    [Migration("20210611093917_BetsLots")]
+    partial class BetsLots
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -132,18 +132,15 @@ namespace OnlineAuction.API.Migrations
                     b.Property<decimal>("BetSize")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("BetterId")
-                        .HasColumnType("int");
+                    b.Property<long>("BetterId")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("LotId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("LotId1")
+                    b.Property<long>("LotId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LotId1");
+                    b.HasIndex("LotId");
 
                     b.ToTable("Bets");
                 });
@@ -325,11 +322,16 @@ namespace OnlineAuction.API.Migrations
 
             modelBuilder.Entity("OnlineAuction.API.Models.Bet", b =>
                 {
-                    b.HasOne("OnlineAuction.Domain.Models.Lot", "Lot")
-                        .WithMany()
-                        .HasForeignKey("LotId1");
+                    b.HasOne("OnlineAuction.Domain.Models.Lot", null)
+                        .WithMany("Bets")
+                        .HasForeignKey("LotId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
 
-                    b.Navigation("Lot");
+            modelBuilder.Entity("OnlineAuction.Domain.Models.Lot", b =>
+                {
+                    b.Navigation("Bets");
                 });
 #pragma warning restore 612, 618
         }

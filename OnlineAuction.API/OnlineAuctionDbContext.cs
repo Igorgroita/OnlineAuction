@@ -17,6 +17,7 @@ namespace OnlineAuction.API
 
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Bet> Bets { get; set; }
+        public DbSet<Cathegory> Cathegories { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Lot>().HasData(
