@@ -1,7 +1,7 @@
-﻿using OnlineAuction.Domain.Auth;
+﻿using OnlineAuction.API.Auth;
 using System.Collections.Generic;
 
-namespace OnlineAuction.Domain.Models
+namespace OnlineAuction.API.Models
 {
     class Auctioneer : User
     {

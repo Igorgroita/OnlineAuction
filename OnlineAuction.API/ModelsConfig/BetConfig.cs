@@ -12,8 +12,9 @@ namespace OnlineAuction.API.ModelsConfig
     {
         public void Configure(EntityTypeBuilder<Bet> builder)
         {
-
-           
+            builder.Property(x => x.BetterId).IsRequired();
+            builder.Property(x => x.BetSize).IsRequired();
+            builder.Property(x => x.LotId).IsRequired();          
         }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineAuction.API;
 
 namespace OnlineAuction.API.Migrations
 {
     [DbContext(typeof(OnlineAuctionDbContext))]
-    partial class OnlineAuctionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210612100035_Migration2Complete")]
+    partial class Migration2Complete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -188,8 +190,6 @@ namespace OnlineAuction.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LotId");
-
                     b.ToTable("PhotoPaths");
                 });
 
@@ -206,18 +206,10 @@ namespace OnlineAuction.API.Migrations
                     b.Property<long>("LotId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("ResponseId")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LotId");
-
-                    b.HasIndex("ResponseId")
-                        .IsUnique();
 
                     b.ToTable("Questions");
                 });
@@ -443,44 +435,9 @@ namespace OnlineAuction.API.Migrations
                     b.Navigation("Lot");
                 });
 
-            modelBuilder.Entity("OnlineAuction.API.Models.PhotoPath", b =>
-                {
-                    b.HasOne("OnlineAuction.Domain.Models.Lot", "Lot")
-                        .WithMany("PhotoPaths")
-                        .HasForeignKey("LotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lot");
-                });
-
-            modelBuilder.Entity("OnlineAuction.API.Models.Question", b =>
-                {
-                    b.HasOne("OnlineAuction.Domain.Models.Lot", "Lot")
-                        .WithMany("Questions")
-                        .HasForeignKey("LotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OnlineAuction.API.Models.Response", "Response")
-                        .WithOne("Question")
-                        .HasForeignKey("OnlineAuction.API.Models.Question", "ResponseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lot");
-
-                    b.Navigation("Response");
-                });
-
             modelBuilder.Entity("OnlineAuction.API.Models.Cathegory", b =>
                 {
                     b.Navigation("LotCathegories");
-                });
-
-            modelBuilder.Entity("OnlineAuction.API.Models.Response", b =>
-                {
-                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("OnlineAuction.Domain.Models.Lot", b =>
@@ -488,10 +445,6 @@ namespace OnlineAuction.API.Migrations
                     b.Navigation("Bets");
 
                     b.Navigation("LotCathegories");
-
-                    b.Navigation("PhotoPaths");
-
-                    b.Navigation("Questions");
                 });
 #pragma warning restore 612, 618
         }

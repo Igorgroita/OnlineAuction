@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineAuction.API.Models;
 using OnlineAuction.API.ModelsConfig;
-using OnlineAuction.Domain.Auth;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Auth;
+using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +17,40 @@ namespace OnlineAuction.API
 
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Bet> Bets { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Response> Responses { get; set; }
         public DbSet<Cathegory> Cathegories { get; set; }
+        public DbSet<PhotoPath> PhotoPaths { get; set; }
+        public DbSet<LotCathegory> LotCathegories { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Lot>().HasData(
-            //        new Lot
-            //        {
-            //            Id = 1,
-            //            LotName = "Napoleon's Hat",
-            //            Description = "This is the hat that wore Napoleon the I of France....",
-            //            MinimalBet = 1111121,
-            //            Active = true,
-            //            StartNegotiationTime = DateTime.Now
-            //        }
-            //    );
-
-
-
+            
             base.OnModelCreating(modelBuilder);
 
             var assembly = typeof(LotConfig).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+
+            modelBuilder.Entity<LotCathegory>().HasKey(l => new { l.LotId, l.CathegoryId });
+
+            modelBuilder.Entity<LotCathegory>()
+                        .HasOne(lc => lc.Lot)
+                        .WithMany(lc => lc.LotCathegories)
+                        .HasForeignKey(lc => lc.LotId);
+
+            modelBuilder.Entity<LotCathegory>()
+                        .HasOne(lc => lc.Cathegory)
+                        .WithMany(lc => lc.LotCathegories)
+                        .HasForeignKey(lc => lc.CathegoryId);
+
+            modelBuilder.Entity<PhotoPath>()
+                        .HasOne(p => p.Lot)
+                        .WithMany(l => l.PhotoPaths)
+                        .HasForeignKey(p => p.LotId);
+
+            modelBuilder.Entity<Question>()
+                        .HasOne(q => q.Lot)
+                        .WithMany(l => l.Questions)
+                        .HasForeignKey(q => q.LotId);
 
         }
 

@@ -1,11 +1,11 @@
 ﻿using OnlineAuction.API.Models;
-using OnlineAuction.Domain.Auth;
+using OnlineAuction.API.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlineAuction.Domain.Models
+namespace OnlineAuction.API.Models
 {
     public class Lot : BaseEntity
     {
@@ -28,9 +28,12 @@ namespace OnlineAuction.Domain.Models
 
         //public decimal? MinimalBet { get; set; }
         //public decimal? CurrentPrice { get; set; }
-//        public string PhotoFilePath { get; set; }
-//        public DateTime StartNegotiationTime { get; set; }
-//        public DateTime SellTime { get; set; }
-        public List<Bet> Bets { get; set; }
+        //        public string PhotoFilePath { get; set; }
+        //        public DateTime StartNegotiationTime { get; set; }
+        //        public DateTime SellTime { get; set; }
+        public IList<Bet> Bets { get; set; }
+        public IList<LotCathegory> LotCathegories{ get; set; }
+        public IList<PhotoPath> PhotoPaths { get; set; }
+        public IList<Question> Questions { get; set; }
     }
 }

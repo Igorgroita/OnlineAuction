@@ -1,4 +1,4 @@
-﻿using OnlineAuction.Domain.Models;
+﻿using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +9,8 @@ namespace OnlineAuction.API.Models
     public class Cathegory : BaseEntity
     {
         public string CathegoryName { get; set; }
+
+        public IList<LotCathegory> LotCathegories { get; set; }
+
     }
 }

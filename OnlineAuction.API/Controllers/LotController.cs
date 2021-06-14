@@ -5,7 +5,7 @@ using OnlineAuction.API.Application.Commands;
 using OnlineAuction.API.Application.Queries;
 using OnlineAuction.API.Dtos;
 using OnlineAuction.API.Repositories.Implementations;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

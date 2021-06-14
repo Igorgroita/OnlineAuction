@@ -1,5 +1,5 @@
 ﻿using OnlineAuction.API.Repositories.Interfaces;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

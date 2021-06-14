@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using OnlineAuction.API.Dtos;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

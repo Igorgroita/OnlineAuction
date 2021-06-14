@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +22,8 @@ namespace OnlineAuction.API.ModelsConfig
 
             builder.Property(x => x.AuctioneerId)
                     .IsRequired();
+
+            
 
      //       builder.HasKey(x => x.Id);
         }

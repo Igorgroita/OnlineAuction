@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Globalization;
 
-namespace OnlineAuction.Domain.Auth
+namespace OnlineAuction.API.Auth
 {
     public class User : IdentityUser<long>
     {

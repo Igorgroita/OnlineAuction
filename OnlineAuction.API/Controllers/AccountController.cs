@@ -11,7 +11,7 @@ using OnlineAuction.API.Dtos.Account;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using OnlineAuction.Domain.Auth;
+using OnlineAuction.API.Auth;
 
 namespace OnlineAuction.API.Controllers
 {

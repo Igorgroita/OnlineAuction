@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using OnlineAuction.API.Dtos;
-using OnlineAuction.Domain.Models;
+using OnlineAuction.API.Models;
 
 namespace OnlineAuction.API.Profiles
 {

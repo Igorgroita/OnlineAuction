@@ -1,4 +1,4 @@
-﻿using OnlineAuction.Domain.Models;
+﻿using OnlineAuction.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

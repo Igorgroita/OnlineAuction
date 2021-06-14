@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace OnlineAuction.API.Models
 {
-    public class Bet : BaseEntity
+    public class LotCathegory
     {
         public long LotId { get; set; }
-        public long BetterId { get; set; }
-        public decimal BetSize { get; set; }
+        public Lot Lot { get; set; }
+
+        public long CathegoryId { get; set; }
+        public Cathegory Cathegory { get; set; }
     }
 }

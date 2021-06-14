@@ -1,4 +1,4 @@
-﻿namespace OnlineAuction.Domain.Models
+﻿namespace OnlineAuction.API.Models
 {
     public abstract class BaseEntity
     {
