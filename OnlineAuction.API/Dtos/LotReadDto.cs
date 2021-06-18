@@ -8,7 +8,7 @@ namespace OnlineAuction.API.Dtos
     public class LotReadDto
     {
         public string LotName { get; set; }
-        public string AuctioneerId { get; set; }
+        public long AuctioneerId { get; set; }
         public string Description { get; set; }
     }
 }

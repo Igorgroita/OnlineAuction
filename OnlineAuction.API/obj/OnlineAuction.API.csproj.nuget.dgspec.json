@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {}
+    "C:\\Users\\groit\\Desktop\\backendProjLast\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {
+    "C:\\Users\\groit\\Desktop\\backendProjLast\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
+        "projectUniqueName": "C:\\Users\\groit\\Desktop\\backendProjLast\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
         "projectName": "OnlineAuction.API",
-        "projectPath": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
-        "packagesPath": "C:\\Users\\igor.groita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\igor.groita\\Desktop\\OnlineAuction\\OnlineAuction.API\\obj\\",
+        "projectPath": "C:\\Users\\groit\\Desktop\\backendProjLast\\OnlineAuction\\OnlineAuction.API\\OnlineAuction.API.csproj",
+        "packagesPath": "C:\\Users\\groit\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\groit\\Desktop\\backendProjLast\\OnlineAuction\\OnlineAuction.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor.groita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\groit\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

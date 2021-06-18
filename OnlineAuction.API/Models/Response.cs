@@ -8,6 +8,6 @@ namespace OnlineAuction.API.Models
 {
     public class Response : BaseEntity
     {
-        public long Formulation { get; set; }
+        public string Formulation { get; set; }
     }
 }
