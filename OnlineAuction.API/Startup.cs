@@ -34,9 +34,7 @@ namespace OnlineAuction.API
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                     builder =>
                                     {
-                                        builder.WithOrigins("http://localhost:3000")
-                                               .AllowAnyHeader()
-                                               .AllowAnyMethod();
+                                        builder.WithOrigins("http://localhost:3000");
                                     });
             });
 
@@ -70,8 +68,6 @@ namespace OnlineAuction.API
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseCors(configurePolicy => configurePolicy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineAuction.API.Application.Commands;
 using OnlineAuction.API.Application.Queries;
@@ -14,6 +15,7 @@ namespace OnlineAuction.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize()]
     public class BetController : Controller
     {
         private readonly IMediator _mediator;
@@ -24,6 +26,7 @@ namespace OnlineAuction.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IList<Bet>> GetAllBets(CancellationToken cancellationToken)
         {
             return await _mediator.Send(new GetBetListQuery(), cancellationToken);
