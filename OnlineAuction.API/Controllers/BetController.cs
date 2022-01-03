@@ -38,16 +38,6 @@ namespace OnlineAuction.API.Controllers
             return await _mediator.Send(new GetBetByIdQuery(id), cancellationToken);
         }
 
-        //[HttpGet]
-        //public async Task<IList<Bet>> GetBetByLot(long lotId, CancellationToken cancellationToken)
-        //{
-        //    return await _mediator.Send(new GetBetsByLotQuery(lotId), cancellationToken);
-        //}
-
-        // Question to Evgheni:
-        // How to I write the route for getting bets by their lot id.
-        // If I write another [HttpGet] annotation I get an error.
-
         [HttpPost]
         public async Task<BetReadDto> CreateBet(BetReadDto bet, CancellationToken cancellationToken)
         {
